@@ -1,0 +1,118 @@
+/* Initially hide all screens, except for screen-nosupport */
+#screen-login, #screen-login-telegraph, #screen-main, #screen-edit {
+    display: none;
+}
+
+/* error popup */
+.error{
+    z-index: 2;
+    position: fixed;
+    top: -100px;
+    transition: 200ms;
+    color: #B71C1C;
+    font-weight: bold;
+    background-color: #fff;
+    box-shadow: 0 2px 4px #777;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 3px;
+}
+.error.active{
+    top: 0;
+}
+
+/* Main Screen */
+
+#user-info{
+    text-align: center;
+}
+#user-info > *{
+    display: block;
+}
+
+#user-name{
+    font-size: 2em;
+}
+
+#user-short{
+    color: #555;
+    font-size: 0.8em;
+}
+#user-short:before{
+    content: "(";
+}
+#user-short:after{
+    content: ")";
+}
+
+#page-list h1{
+    font-size: 1.5em;
+}
+
+#fab{
+    display: block;
+    position: fixed;
+    background-color: #000;
+    border-radius: 48px;
+    width: 48px;
+    height: 48px;
+    box-shadow: 0 4px 8px #777;
+    z-index: 1;
+    cursor: pointer;
+    transition: 200ms;
+}
+#fab:hover{
+    box-shadow: 0 8px 16px #777;
+    transform: translateY(-4px);
+}
+
+/* Animating picture from silhouette to pencil */
+#user-image-animator{
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    background-color: black;
+    border-radius: 48px;
+    box-shadow: 0 2px 4px #777;
+    cursor: pointer;
+    transition: 200ms;
+    margin-bottom: 1em;
+}
+#user-edit{
+    position: absolute;
+    height: 0;
+    overflow: visible;
+    transform: translateY(-52px);
+    opacity: 0;
+    transition: 200ms;
+}
+#user-image{
+    transition: 200ms;
+}
+#user-image-animator:hover{
+    box-shadow: 0px 4px 8px #777;
+    transform: translateY(-4px);
+}
+#user-image-animator:hover #user-edit{
+    opacity: 1;
+}
+#user-image-animator:hover #user-image{
+    opacity: 0;
+}
+
+Login screen
+input, button{
+    display: block;
+    width: 100%;
+    border-radius: 3px;
+    padding: 3px;
+    border: 1px solid #bbb;
+}
+button{
+    width: calc(100% + 0.6em);
+}
+
+/* Edit account screen */
+#logout-token{
+    word-wrap: break-word;
+}
